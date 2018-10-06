@@ -1,1 +1,43 @@
+#!/bin/sh
+
+modify_voltage(){
+  [ ! -d "$rootfs/etc/overclock" ] && mkdir -p "$rootfs/etc/overclock"
+  cd "$rootfs/etc/overclock" && rm -f * && rm /tmp/script2.tmp
+  echo "Grabbing Console Config..."
+  hakchi readBoot1 > uboot.bin 
+  sntool split uboot.bin 
+  bin2fex script.bin script.fex
+  sed -i -e 's/LV2_volt = [^"]*/LV2_volt = 1500/g' script.fex  
+  fex2bin script.fex script.bin
+  sntool join uboot.bin
+  touch "$rootfs/etc/overclock/volt_adjusted"
+  hakchi flashBoot1 uboot.bin
+}
+
+overclock(){
+
+  # TTY0 Color Codes
+  Red="\e[33;0;31m"          # Red
+  Green="\e[33;0;32m"        # Green
+  Yellow="\e[33;0;33m"       # Yellow
+  Cyan="\e[33;0;36m"         # Cyan
+  White="\e[33;0;37m"        # White
+
+  [ ! -f "rootfs/etc/overclock/volt_adjusted" ] && modify_voltage #Edit the voltage config for LV2
+        
+  #local cpufreq="/sys/devices/system/cpu/cpu0/cpufreq"
+  #[ -z "$1" ] || cfg_cur_freq="$1"
+  #local freq="$cpufreq/cpuinfo_${cfg_cur_freq}_freq"
+  #if ! [ -f "$freq" ]; then
+  #  cfg_cur_freq="max"
+  #  freq="$cpufreq/cpuinfo_${cfg_cur_freq}_freq"
+  #fi
+  #cat "$freq" > "$cpufreq/scaling_max_freq"
+
+  modify_voltage
+
+#  echo "current freq: $(cat "$cpufreq/scaling_cur_freq")" &> /tmp/script.tmp
+#  echo "current temp: $(hwmon)" &> /tmp/script.tmp
+}
 overclock
+
