@@ -47,7 +47,7 @@ overclock(){
     printToScreen -e "${Gre}**********************************************"
     printToScreen -e "${Gre}******* Hakchi Speed Booster Installer *******"
     printToScreen -e "${Gre}**********************************************"
-    printToScreen -e "${Yel} By MadMonkey+Swingflip / HakchiResources.com "
+    printToScreen -e "${Yel} By Swingflip+MadMonkey / HakchiResources.com "
     printToScreen -e "${Gre}**********************************************"
     printToScreen -e "${Cya}Current Hakchi Build: $hakchiVersion          "
     printToScreen -e "${Red}****************${Whi}!!!READ ME!!!${Red}*****************"
