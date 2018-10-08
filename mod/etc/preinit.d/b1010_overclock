@@ -16,7 +16,7 @@ modify_voltage(){
   sntool split uboot.bin 
   hakchi getScript > script.fex
   printToScreen "Writing new voltage config..."
-  sed -i -e 's/LV2_volt = [^"]*/LV2_volt = 1500/g' script.fex #1.5v max rated voltage for R16 Allwinner
+  sed -i -e 's/LV2_volt = 1460/LV2_volt = 1500/g' script.fex #1.5v max rated voltage for R16 Allwinner
   #You can also set LV2 clock speed here to 1.5ghz but make sure you have adequate cooling 
   printToScreen "Saving and packaging new config..."
   fex2bin script.fex script.bin

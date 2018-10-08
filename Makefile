@@ -1,5 +1,5 @@
-MOD_VER := Hakchi_Speed_Booster_RC1
-MOD_NAME := Hakchi Speed Booster RC1
+MOD_VER := Hakchi_Speed_Booster_RC2
+MOD_NAME := Hakchi Speed Booster RC2
 MOD_CATEGORY := Hakchi Core Mods
 MOD_CREATOR := Swingflip & MadMonkey
 
