@@ -47,6 +47,7 @@ overclock(){
     printToScreen -e "${Gre}******* Hakchi Speed Booster Installer *******"
     printToScreen -e "${Gre}**********************************************"
     printToScreen -e "${Yel} By MadMonkey+Swingflip / HakchiResources.com "
+    #CHECK FOR CE INSTALL HERE.
     printToScreen -e "${Red}****************${Whi}!!!READ ME!!!${Red}*****************"
     printToScreen -e "${Whi}We do not accept ANY responsibility to any    "
     printToScreen -e "${Whi}damage to your console using this mod! You are"
