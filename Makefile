@@ -1,7 +1,7 @@
-MOD_VER := Hakchi_Memory_Booster_v1_0_0
-MOD_NAME := Hakchi Memory Booster v1.0.0
+MOD_VER := Hakchi_Speed_Booster_RC1
+MOD_NAME := Hakchi Speed Booster RC1
 MOD_CATEGORY := Hakchi Core Mods
-MOD_CREATOR := Swingflip
+MOD_CREATOR := Swingflip & MadMonkey
 
 GIT_COMMIT := $(shell echo "`git rev-parse --short HEAD``git diff-index --quiet HEAD -- || echo '-dirty'`")
 

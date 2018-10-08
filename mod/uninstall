@@ -1,5 +1,3 @@
-source /etc/preinit
-script_init
 overclock boot
 unset cfg_cur_freq
 rm -rf "$rootfs/etc/overclock" 
