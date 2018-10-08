@@ -14,7 +14,7 @@ modify_voltage(){
   printToScreen "Grabbing console config..."
   hakchi readBoot1 > uboot.bin 
   sntool split uboot.bin 
-  bin2fex script.bin script.fex
+  hakchi getScript > script.fex
   printToScreen "Writing new voltage config..."
   sed -i -e 's/LV2_volt = [^"]*/LV2_volt = 1500/g' script.fex #1.5v max rated voltage for R16 Allwinner
   #You can also set LV2 clock speed here to 1.5ghz but make sure you have adequate cooling 
@@ -27,6 +27,7 @@ modify_voltage(){
   printToScreen "3" && sleep 1
   printToScreen "2" && sleep 1
   printToScreen "1" && sleep 1
+  hakchi setScript script.fex
   hakchi flashBoot1 uboot.bin
   reboot
 }
@@ -47,7 +48,8 @@ overclock(){
     printToScreen -e "${Gre}******* Hakchi Speed Booster Installer *******"
     printToScreen -e "${Gre}**********************************************"
     printToScreen -e "${Yel} By MadMonkey+Swingflip / HakchiResources.com "
-    #CHECK FOR CE INSTALL HERE.
+    printToScreen -e "${Gre}**********************************************"
+    printToScreen -e "${Cya}Current Hakchi Build: $hakchiVersion          "
     printToScreen -e "${Red}****************${Whi}!!!READ ME!!!${Red}*****************"
     printToScreen -e "${Whi}We do not accept ANY responsibility to any    "
     printToScreen -e "${Whi}damage to your console using this mod! You are"
