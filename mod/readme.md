@@ -1,4 +1,11 @@
-# Hakchi Speed Booster
+---
+Name: Hakchi Speed Booster RC2
+Creator: Swingflip & MadMonkey
+Category: Hakchi Core Mods
+Version: Hakchi_Speed_Booster_RC2
+Built on: Mon  8 Oct 22:32:39 BST 2018
+Git commit: 96dbe20
+---
 
 This module will give you mad gains bro.
 

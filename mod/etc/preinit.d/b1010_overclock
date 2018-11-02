@@ -55,7 +55,7 @@ overclock(){
     printToScreen -e "${Whi}damage to your console using this mod! You are"
     printToScreen -e "${Whi}using this at your own risk! Please go to     "
     printToScreen -e "${Whi}https://hakchiresources.com/speedFAQ before   "
-    printToScreen -e "${Whi}you run this mod! You have been warned!       "
+    printToScreen -e "${Whi}run this mod install! You have been warned! "
     printToScreen -e "${Red}**********************************************"
     printToScreen -e "${Whi}This installer will install in ${Gre}15 ${Whi}seconds...  "
     sleep 15
