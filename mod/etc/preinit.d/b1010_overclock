@@ -17,6 +17,7 @@ modify_voltage(){
   hakchi getScript > script.fex
   printToScreen "Writing new voltage config..."
   sed -i -e 's/LV2_volt = 1460/LV2_volt = 1500/g' script.fex #1.5v max rated voltage for R16 Allwinner
+  sed -i -e 's/LV2_freq = 1344000000/LV2_freq = 1300000000/g' script.fex #Reduce Lv2 1.344ghz down to 1.3ghz for stability reasons
   #You can also set LV2 clock speed here to 1.5ghz but make sure you have adequate cooling 
   printToScreen "Saving and packaging new config..."
   fex2bin script.fex script.bin
